@@ -1,0 +1,19 @@
+<svg width="67" height="67" viewBox="0 0 67 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Black logo + sircle">
+<g id="Ellipse 8">
+<circle cx="33.2194" cy="33.3867" r="33" fill="url(#paint0_linear_1_143)" fill-opacity="0.2"/>
+<circle cx="33.2194" cy="33.3867" r="32.5" stroke="black" stroke-opacity="0.1"/>
+</g>
+<path id="Rectangle 2" d="M21.8317 19.999C21.8317 16.3021 24.8286 13.3051 28.5255 13.3051H35.2194V26.6928H28.5255C24.8286 26.6928 21.8317 23.6959 21.8317 19.999V19.999Z" stroke="black" stroke-width="2.8688"/>
+<path id="Rectangle 5" d="M48.6071 19.999C48.6071 16.3021 45.6101 13.3051 41.9132 13.3051H35.2193V26.6928H41.9132C45.6101 26.6928 48.6071 23.6959 48.6071 19.999V19.999Z" stroke="black" stroke-width="2.8688"/>
+<path id="Rectangle 6" d="M48.6071 33.3867C48.6071 29.6898 45.6101 26.6929 41.9132 26.6929V26.6929C38.2163 26.6929 35.2193 29.6898 35.2193 33.3867V33.3867C35.2193 37.0837 38.2163 40.0806 41.9132 40.0806V40.0806C45.6101 40.0806 48.6071 37.0837 48.6071 33.3867V33.3867Z" stroke="black" stroke-width="2.8688"/>
+<path id="Rectangle 3" d="M21.8317 33.3867C21.8317 29.6898 24.8286 26.6929 28.5255 26.6929H35.2194V40.0806H28.5255C24.8286 40.0806 21.8317 37.0837 21.8317 33.3867V33.3867Z" stroke="black" stroke-width="2.8688"/>
+<path id="Rectangle 4" d="M21.8317 46.7744C21.8317 43.0775 24.8286 40.0806 28.5255 40.0806H35.2194V46.7744C35.2194 50.4714 32.2225 53.4683 28.5255 53.4683V53.4683C24.8286 53.4683 21.8317 50.4714 21.8317 46.7744V46.7744Z" stroke="black" stroke-width="2.8688"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_143" x1="18.8626" y1="0.386719" x2="33.2194" y2="66.3867" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="0.484375" stop-color="white" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

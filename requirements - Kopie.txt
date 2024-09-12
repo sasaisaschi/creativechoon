@@ -1,0 +1,24 @@
+# Flask: Wird als Web-Framework für das Backend verwendet.
+Flask==2.1.1
+
+# Flask-CORS: Erlaubt Cross-Origin Resource Sharing, was notwendig ist, wenn das Frontend und Backend auf unterschiedlichen Domains/Ports laufen.
+Flask-CORS==3.0.10
+
+# mido: Wird verwendet, um MIDI-Dateien zu erstellen und zu bearbeiten.
+mido==1.2.10
+
+# python-rtmidi: Ermöglicht Echtzeit-MIDI I/O, ist jedoch nur notwendig, wenn du tatsächlich Echtzeit-MIDI-Interaktionen brauchst.
+# Für das reine Erstellen und Speichern von MIDI-Dateien könnte dies entfallen, aber ich habe es zur Sicherheit hinzugefügt.
+python-rtmidi==1.4.9
+
+# groq: Ermöglicht den Zugriff auf das Llama 3-Modell über die Groq API.
+groq==0.2.1
+
+# python-dotenv: Lädt Umgebungsvariablen aus einer .env-Datei.
+python-dotenv==0.19.2
+
+# pychord: Dient zur Verarbeitung und Analyse von Akkorden.
+pychord==0.6.5
+
+# librosa: Wird zur Musik- und Audiosignalverarbeitung verwendet, z.B. zur Umwandlung von Noten in MIDI-Notenwerte.
+librosa==0.9.2
