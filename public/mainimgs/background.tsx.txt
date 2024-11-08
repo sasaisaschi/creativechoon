@@ -1,0 +1,316 @@
+<template>
+<div class="figma-creator-micro-top-view">
+<div class="base">
+<div class="translucent-borders" />
+<div class="inside-edge-split" />
+<div class="sascha-riemenschneider">Sascha Riemenschneider</div>
+<div class="tobisstudio-2024">TobisStudio © 2024</div>
+<div class="top-input">
+<div class="top-input-child" />
+<div class="top-input-child" />
+<div class="top-input-inner" />
+<div class="rectangle-div" />
+<div class="top-input-child1" />
+<div class="top-input-child2" />
+<div class="top-input-child3" />
+<div class="blurred-traslucent" />
+</div>
+<img class="smiley-icon" alt="" src="smiley.png" />
+<div class="leds">
+<div class="leds-child" />
+<div class="leds-item" />
+<div class="leds-inner" />
+</div>
+<div class="black-logo-sircle">
+<div class="black-logo-sircle-child" />
+<div class="black-logo-sircle-item" />
+<div class="black-logo-sircle-inner" />
+<div class="black-logo-sircle-child1" />
+<div class="black-logo-sircle-child2" />
+<div class="black-logo-sircle-child3" />
+</div>
+<img class="control-wheel-icon" alt="" src="control wheel.svg" />
+</div>
+<img class="rivetted-corners-icon" alt="" src="Rivetted corners.svg" />
+<img class="keys-shadow" alt="" src="Keys + shadow.svg" />
+<img class="dialer-shadow" alt="" src="Dialer + shadow.svg" />
+</div>
+</template>
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
+name: "FigmaCreatorMicroTopView"})</script><style scoped>.translucent-borders {
+position: absolute;
+top: 0.011rem;
+left: -0.312rem;
+border-radius: 70px;
+background: radial-gradient(50% 50% at 50% 50%, rgba(102, 255, 218, 0.8), rgba(204, 255, 249, 0)), radial-gradient(50% 50% at 50% 50%, rgba(173, 216, 255, 0.8), rgba(229, 204, 255, 0)), radial-gradient(50% 50% at 50% 50%, rgba(213, 173, 255, 0.8), rgba(229, 204, 255, 0)), #3e006f;
+border: 5px solid #e0e0e0;
+box-sizing: border-box;
+width: 38.65rem;
+height: 38.65rem;
+}
+.inside-edge-split {
+position: absolute;
+top: 2.462rem;
+left: 2.139rem;
+border-radius: 40px;
+background-color: #3e006f;
+border: 5px solid #c2abcd;
+box-sizing: border-box;
+width: 33.75rem;
+height: 33.75rem;
+}
+.sascha-riemenschneider {
+position: absolute;
+top: 13.524rem;
+left: 34.139rem;
+transform: rotate(90deg);
+transform-origin: 0 0;
+}
+.tobisstudio-2024 {
+position: absolute;
+top: 23.899rem;
+left: 3.87rem;
+transform: rotate(-90deg);
+transform-origin: 0 0;
+}
+.top-input-child {
+position: absolute;
+top: 0rem;
+left: 1.459rem;
+background: linear-gradient(94.75deg, #c2abcd, #615c63 0.01%, rgba(212, 196, 220, 0) 47.4%, rgba(255, 255, 255, 0.6));
+width: 4.581rem;
+height: 0.325rem;
+mix-blend-mode: overlay;
+}
+.top-input-inner {
+position: absolute;
+top: 2.451rem;
+left: 1.459rem;
+background: linear-gradient(94.75deg, #c2abcd, #615c63 0.01%, rgba(212, 196, 220, 0) 47.4%, rgba(255, 255, 255, 0.6));
+width: 4.581rem;
+height: 0.325rem;
+mix-blend-mode: overlay;
+}
+.rectangle-div {
+position: absolute;
+top: 0rem;
+left: 2.25rem;
+background: linear-gradient(94.75deg, #524c55, rgba(0, 0, 0, 0) 49.48%, #393939);
+width: 3rem;
+height: 0.325rem;
+mix-blend-mode: overlay;
+}
+.top-input-child1 {
+position: absolute;
+top: 0rem;
+left: 1.459rem;
+background: linear-gradient(94.75deg, rgba(0, 0, 0, 0.46), rgba(0, 0, 0, 0) 47.4%, rgba(0, 0, 0, 0.33));
+width: 4.581rem;
+height: 0.325rem;
+}
+.top-input-child2 {
+position: absolute;
+top: 2.451rem;
+left: 2.25rem;
+background: linear-gradient(94.75deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.39) 72.79%, rgba(255, 255, 255, 0.33));
+width: 0.5rem;
+height: 0.325rem;
+}
+.top-input-child3 {
+position: absolute;
+top: 2.451rem;
+left: 4.75rem;
+background: linear-gradient(94.75deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.39) 72.79%, rgba(255, 255, 255, 0.33));
+width: 0.5rem;
+height: 0.325rem;
+}
+.blurred-traslucent {
+position: absolute;
+top: 0.323rem;
+left: 0rem;
+background: linear-gradient(90deg, rgba(217, 217, 217, 0), rgba(182, 182, 182, 0.4) 22.4%, rgba(131, 131, 131, 0.33) 35.94%, rgba(247, 247, 247, 0.29) 67.19%, rgba(155, 155, 155, 0.21) 77.08%, rgba(155, 155, 155, 0));
+width: 7.244rem;
+height: 2.131rem;
+}
+.top-input {
+position: absolute;
+top: 0rem;
+left: 15.576rem;
+width: 7.244rem;
+height: 2.775rem;
+}
+.smiley-icon {
+position: absolute;
+top: 28.418rem;
+left: 26.97rem;
+width: 4.713rem;
+height: 4.713rem;
+object-fit: contain;
+}
+.leds-child {
+position: absolute;
+top: 0.221rem;
+left: 0rem;
+box-shadow: 0px 0px 64px 20px #feffc1, 0px 4px 4px #feffc1;
+border-radius: var(--br-11xs);
+background: radial-gradient(50% 50% at 50% 50%, #fff, #feffda 38.54%, #dcddb3);
+width: 0.444rem;
+height: 0.769rem;
+transform: rotate(-30deg);
+transform-origin: 0 0;
+}
+.leds-item {
+position: absolute;
+top: 0.221rem;
+left: 0.921rem;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15) inset;
+border-radius: var(--br-11xs);
+background-color: var(--color-darkgray);
+width: 0.444rem;
+height: 0.769rem;
+transform: rotate(-30deg);
+transform-origin: 0 0;
+}
+.leds-inner {
+position: absolute;
+top: 0.221rem;
+left: 1.843rem;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15) inset;
+border-radius: var(--br-11xs);
+background-color: var(--color-darkgray);
+width: 0.444rem;
+height: 0.769rem;
+transform: rotate(-30deg);
+transform-origin: 0 0;
+}
+.leds {
+position: absolute;
+top: 27.162rem;
+left: 28.021rem;
+width: 2.613rem;
+height: 0.888rem;
+}
+.black-logo-sircle-child {
+position: absolute;
+top: 0rem;
+left: 0rem;
+border-radius: 50%;
+background: linear-gradient(167.73deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 48.44%);
+border: 1px solid rgba(0, 0, 0, 0.1);
+box-sizing: border-box;
+width: 4.125rem;
+height: 4.125rem;
+}
+.black-logo-sircle-item {
+position: absolute;
+top: 0.808rem;
+left: 1.351rem;
+border-radius: 6.69px 0px 0px 6.69px;
+border: 2.9px solid var(--color-black);
+box-sizing: border-box;
+width: 1.019rem;
+height: 1.019rem;
+}
+.black-logo-sircle-inner {
+position: absolute;
+top: 0.718rem;
+left: 2.934rem;
+border-radius: 6.69px 0px 0px 6.69px;
+border: 2.9px solid var(--color-black);
+box-sizing: border-box;
+width: 1.019rem;
+height: 1.019rem;
+transform: rotate(180deg);
+transform-origin: 0 0;
+}
+.black-logo-sircle-child1 {
+position: absolute;
+top: 1.554rem;
+left: 2.934rem;
+border-radius: 6.69px;
+border: 2.9px solid var(--color-black);
+box-sizing: border-box;
+width: 1.019rem;
+height: 1.019rem;
+transform: rotate(180deg);
+transform-origin: 0 0;
+}
+.black-logo-sircle-child2 {
+position: absolute;
+top: 1.644rem;
+left: 1.351rem;
+border-radius: 6.69px 0px 0px 6.69px;
+border: 2.9px solid var(--color-black);
+box-sizing: border-box;
+width: 1.019rem;
+height: 1.019rem;
+}
+.black-logo-sircle-child3 {
+position: absolute;
+top: 2.481rem;
+left: 1.351rem;
+border-radius: 6.69px 0px 6.69px 6.69px;
+border: 2.9px solid var(--color-black);
+box-sizing: border-box;
+width: 1.019rem;
+height: 1.019rem;
+}
+.black-logo-sircle {
+position: absolute;
+top: 27.587rem;
+left: 6.639rem;
+width: 4.125rem;
+height: 4.125rem;
+display: none;
+}
+.control-wheel-icon {
+position: absolute;
+top: 7.039rem;
+left: 6.274rem;
+width: 5.55rem;
+height: 4.456rem;
+display: none;
+}
+.base {
+position: absolute;
+top: 0rem;
+left: 0rem;
+width: 38.025rem;
+height: 38.35rem;
+}
+.rivetted-corners-icon {
+position: absolute;
+top: 4.337rem;
+left: 3.995rem;
+width: 30.019rem;
+height: 30rem;
+}
+.keys-shadow {
+position: absolute;
+top: 5.899rem;
+left: 5.563rem;
+width: 28.838rem;
+height: 28.75rem;
+object-fit: cover;
+display: none;
+}
+.dialer-shadow {
+position: absolute;
+top: 4.193rem;
+left: 24.514rem;
+width: 12.031rem;
+height: 12.031rem;
+display: none;
+}
+.figma-creator-micro-top-view {
+width: 100%;
+position: relative;
+height: 38.35rem;
+text-align: center;
+font-size: var(--font-size-base);
+color: var(--color-antiquewhite);
+font-family: var(--font-whyte-inktrap);
+}
+</style>

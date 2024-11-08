@@ -1,6 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Send } from 'lucide-react';
 
 export default function Home() {
     const [userInput, setUserInput] = useState('');
@@ -11,7 +16,7 @@ export default function Home() {
     const [humanize, setHumanize] = useState(false);
     const [modelResponse, setModelResponse] = useState('');
 
-    const handleGenerate = async () => {
+    const handleSubmit = async () => {
         const response = await fetch('http://localhost:5000/api/generate_midi', {
             method: 'POST',
             mode: 'cors',
@@ -43,8 +48,6 @@ export default function Home() {
                 const midiBlob = new Blob([byteArray], { type: 'audio/midi' });
 
                 const url = window.URL.createObjectURL(midiBlob);
-
-                // Verwende den Dateinamen, der vom Backend zurückgegeben wurde
                 const link = document.createElement('a');
                 link.href = url;
                 link.setAttribute('download', data.filename);
@@ -57,27 +60,24 @@ export default function Home() {
         }
     };
 
-
     return (
-        <div style={styles.container}>
-            <h1 style={styles.title}>CreativeChoon</h1>
+        <div className="container">
+            <h1 className="title">CreativeChoon</h1>
 
-            <label style={styles.label} htmlFor="mood-input">
-                Stimmung, Lieblingskünstler oder Komponist:
+            <label className="label" htmlFor="mood-textarea">
+                Mood:
                 <input
-                    id="mood-input"
                     name="mood"
-                    type="text"
                     placeholder="Enter mood, favorite artist, etc."
+                    className="input"
                     value={userInput}
                     onChange={(e) => setUserInput(e.target.value)}
-                    style={styles.input}
                 />
             </label>
 
-            <label style={styles.label} htmlFor="bars-select">
-                Taktanzahl:
-                <select id="bars-select" name="bars" value={bars} onChange={(e) => setBars(e.target.value)} style={styles.select}>
+            <label className="label" htmlFor="bars-select">
+                Bars:
+                <select id="bars-select" name="bars" value={bars} onChange={(e) => setBars(e.target.value)} className="select">
                     <option value="4">4 bars</option>
                     <option value="8">8 bars</option>
                     <option value="16">16 bars</option>
@@ -85,41 +85,41 @@ export default function Home() {
                 </select>
             </label>
 
-            <label style={styles.label} htmlFor="composition-select">
-                Art der Komposition:
-                <select id="composition-select" name="compositionType" value={compositionType} onChange={(e) => setCompositionType(e.target.value)} style={styles.select}>
+            <label className="label" htmlFor="composition-select">
+                Type:
+                <select id="composition-select" name="compositionType" value={compositionType} onChange={(e) => setCompositionType(e.target.value)} className="select">
                     <option value="melody">melody</option>
                     <option value="chord">chord</option>
                 </select>
             </label>
 
-            <label style={styles.label} htmlFor="bpm-input">
+            <label className="label" htmlFor="bpm-input">
                 BPM:
-                <input
+                <Input
                     id="bpm-input"
                     name="bpm"
                     type="number"
                     placeholder="Enter BPM"
                     value={bpm}
                     onChange={(e) => setBpm(e.target.value)}
-                    style={styles.input}
+                    className="input"
                 />
             </label>
 
-            <label style={styles.label} htmlFor="octave-input">
-                Oktave:
-                <input
-                    id="octave-input"
-                    name="octave"
+            <label className="label" htmlFor="oct-input">
+                Oct:
+                <Input
+                    id="oct-input"
+                    name="oct"
                     type="number"
                     placeholder="Enter Octave"
                     value={octave}
                     onChange={(e) => setOctave(e.target.value)}
-                    style={styles.input}
+                    className="input"
                 />
             </label>
 
-            <label style={styles.label} htmlFor="humanize-input">
+            <label className="label" htmlFor="humanize-input">
                 Humanize:
                 <input
                     id="humanize-input"
@@ -127,73 +127,18 @@ export default function Home() {
                     type="checkbox"
                     checked={humanize}
                     onChange={(e) => setHumanize(e.target.checked)}
-                    style={styles.checkbox}
+                    className="checkbox"
                 />
             </label>
 
-            <button onClick={handleGenerate} style={styles.button}>Generate</button>
+            <Button onClick={handleSubmit} className="button">
+                <Send className="h-3 w-3 mr-2" /> Generate
+            </Button>
 
-            <div style={styles.responseContainer}>
-                <h2>Modellantwort:</h2>
-                <textarea value={modelResponse} readOnly style={styles.textarea}></textarea>
+            <div className="response-container">
+                <h2>Model:</h2>
+                <Textarea value={modelResponse} readOnly className="textarea" />
             </div>
         </div>
     );
 }
-
-const styles = {
-    container: {
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '100vh',
-        textAlign: 'center',
-    },
-    title: {
-        marginBottom: '20px',
-        fontSize: '2em',
-        color: '#333',
-    },
-    label: {
-        marginBottom: '10px',
-        fontSize: '1.2em',
-        color: '#555',
-    },
-    input: {
-        padding: '10px',
-        fontSize: '1em',
-        width: '300px',
-        marginTop: '5px',
-    },
-    select: {
-        padding: '10px',
-        fontSize: '1em',
-        width: '320px',
-        marginTop: '5px',
-    },
-    checkbox: {
-        marginLeft: '10px',
-    },
-    button: {
-        padding: '10px 20px',
-        fontSize: '1.2em',
-        color: '#fff',
-        backgroundColor: '#007BFF',
-        border: 'none',
-        borderRadius: '5px',
-        cursor: 'pointer',
-        marginTop: '20px',
-    },
-    responseContainer: {
-        marginTop: '20px',
-        width: '100%',
-        maxWidth: '500px',
-    },
-    textarea: {
-        width: '100%',
-        height: '150px',
-        fontSize: '1em',
-        padding: '10px',
-    },
-};

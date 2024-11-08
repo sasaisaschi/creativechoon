@@ -5,26 +5,36 @@ import random
 import os
 import io
 import base64
-import re
 from datetime import datetime
 from pychord import Chord
 import librosa
 from mido import Message, MidiFile, MidiTrack, MetaMessage, bpm2tempo
 from groq import Groq
 
+# Laden der Umgebungsvariablen
 load_dotenv()
 
+# Flask App erstellen
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
 
+# Groq API Key aus den Umgebungsvariablen laden
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
-
 if not GROQ_API_KEY:
     raise ValueError("GROQ_API_KEY is not set in the environment variables.")
 
+# Groq Client initialisieren
 client = Groq(api_key=GROQ_API_KEY)
 
+# Relativer Output-Pfad zum Projektverzeichnis
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
+
+# Stelle sicher, dass der Output-Ordner existiert
+if not os.path.exists(OUTPUT_DIR):
+    os.makedirs(OUTPUT_DIR)
+
 def extract_keynote(generated_text):
+    """Extrahiert die Tonart aus dem generierten Text."""
     return generated_text.split()[0]
 
 @app.route("/api/generate_midi", methods=["POST"])
@@ -46,6 +56,7 @@ def generate_midi():
     )
 
     try:
+        # Modellaufruf für Generierung
         completion = client.chat.completions.create(
             model="gemma2-9b-it",
             messages=[
@@ -60,9 +71,9 @@ def generate_midi():
         )
 
         generated_text = completion.choices[0].message.content.strip()
-
         keynote = extract_keynote(generated_text)
 
+        # MIDI-Datei basierend auf Typ generieren
         if composition_type == "melody":
             midi_data = generate_midi_from_melody(generated_text, bpm, octave, humanize)
         else:
@@ -71,8 +82,9 @@ def generate_midi():
 
         if midi_data:
             filename = f"{keynote}_{bpm}bpm_{composition_type}_{bars}bars_{datetime.now().strftime('%Y%m%d')}.mid"
-            output_path = os.path.join("D:\\creativechoon\\output", filename)
+            output_path = os.path.join(OUTPUT_DIR, filename)
 
+            # MIDI-Datei speichern
             with open(output_path, 'wb') as f:
                 f.write(midi_data)
 
@@ -85,15 +97,15 @@ def generate_midi():
         return jsonify({"error": "Model generation failed", "details": str(e)}), 500
 
 def generate_midi_from_chords(chords_string, bpm, octave, humanize):
+    """Generiert MIDI-Daten aus einer Chord-Sequenz."""
     chords = chords_string.split()
-
     midi_chords = []
     for word in chords:
         try:
             chord = Chord(word)
             notes = chord.components_with_pitch(root_pitch=octave)
             midi_chords.append([librosa.note_to_midi(note) for note in notes])
-        except Exception as e:
+        except Exception:
             continue
 
     if not midi_chords:
@@ -110,7 +122,7 @@ def generate_midi_from_chords(chords_string, bpm, octave, humanize):
     track.append(MetaMessage('set_tempo', tempo=bpm2tempo(bpm), time=0))
 
     for chord in midi_chords:
-        velocity = random.randrange(64, 84) if 64 != 84 else 84
+        velocity = random.randrange(64, 84)
         start = 0 if not humanize else random.randint(0, humanization_amount)
         for note in chord:
             if 0 <= note <= 127:
@@ -125,15 +137,15 @@ def generate_midi_from_chords(chords_string, bpm, octave, humanize):
     return midi_bytes.read()
 
 def generate_midi_from_melody(melody_string, bpm, octave, humanize):
+    """Generiert MIDI-Daten aus einer Melodie-Sequenz."""
     notes = melody_string.split()
-
     midi_notes = []
     for word in notes:
         try:
             note_name, note_octave = word[:-1], word[-1]
             midi_note = librosa.note_to_midi(note_name + note_octave)
             midi_notes.append(midi_note)
-        except Exception as e:
+        except Exception:
             continue
 
     if not midi_notes:
@@ -151,7 +163,7 @@ def generate_midi_from_melody(melody_string, bpm, octave, humanize):
 
     for i, note in enumerate(midi_notes, 1):
         if 0 <= note <= 127:
-            velocity = random.randrange(64, 84) if 64 != 84 else 84
+            velocity = random.randrange(64, 84)
             start = 0 if not humanize else random.randint(0, humanization_amount)
             track.append(Message('note_on', note=int(note), velocity=velocity, time=start))
             track.append(Message('note_off', note=int(note), velocity=velocity, time=note_duration))
@@ -161,5 +173,6 @@ def generate_midi_from_melody(melody_string, bpm, octave, humanize):
     midi_bytes.seek(0)
     return midi_bytes.read()
 
+# Flask Server starten
 if __name__ == '__main__':
     app.run(debug=True)

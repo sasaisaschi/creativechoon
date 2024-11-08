@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Whyte+Inktrap:wght@400&display=swap');
+body {
+margin: 0; line-height: normal;
+}
+:root {
+/* fonts */
+--font-whyte-inktrap: 'Whyte Inktrap';
+/* font sizes */
+--font-size-base: 1rem;
+/* Colors */
+--color-black: #000;
+--color-darkgray: #aaab94;
+--color-antiquewhite: #e6d8c4;
+/* Border radiuses */
+--br-6xs-7: 6.7px;
+--br-11xs: 2px;
+}

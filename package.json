@@ -6,14 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:styles": "stylelint 'src/**/*.css'"
   },
   "dependencies": {
+    "@radix-ui/react-scroll-area": "^1.1.0",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@svgr/webpack": "^8.1.0",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
     "idna": "^0.0.1",
+    "lucide-react": "^0.441.0",
     "next": "14.2.7",
     "punycode": "^2.3.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.2"
   },
   "devDependencies": {
     "@types/node": "^20.16.3",
@@ -21,6 +29,23 @@
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.7",
+    "stylelint": "14.16.0",
+    "stylelint-config-prettier": "^9.0.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^6.0.0",
     "typescript": "^5.5.4"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-standard",
+      "stylelint-config-prettier"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "order/properties-alphabetical-order": true,
+      "selector-class-pattern": null
+    }
   }
 }
